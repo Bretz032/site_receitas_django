@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import django_heroku
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +28,7 @@ SECRET_KEY = 'django-insecure-7mo)4#!m#@i_lyuz^%b$h3ix7_lt^qldumr9v#e&%3huw^ttef
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['site-receitas.herokuapp.com']
 
 
 # Application definition
@@ -80,10 +82,11 @@ WSGI_APPLICATION = 'alurareceita.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'alura_receita',
-        'USER': 'postgres',
-        'PASSWORD': 'admin123',
-        'HOST': 'localhost'
+        'NAME': 'd9rfjo8r2kmvoo',
+        'USER': 'nhgpggtwgcmnnc',
+        'PASSWORD': 'e431b5b524e8a60c73c5e0593c1854f8d76863e8e1d7ee56864d897e223b9ba2',
+        'HOST': 'ec2-54-83-21-198.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
@@ -135,6 +138,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
      os.path.join(BASE_DIR,'alurareceita/static')
 ]
+django_heroku.settings(locals())
 
 #Media
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
