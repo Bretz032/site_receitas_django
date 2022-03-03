@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'alurareceita.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9rfjo8r2kmvoo',
-        'USER': 'nhgpggtwgcmnnc',
-        'PASSWORD': 'e431b5b524e8a60c73c5e0593c1854f8d76863e8e1d7ee56864d897e223b9ba2',
+        'NAME': 'd8d5krl65p0m6m',
+        'USER': 'lzvlibfxvmrbei',
+        'PASSWORD': '14ff8231563fa0301e064bbbbd27ba2002cd0cb1e4d475f8ad254e47d7ff5e7e',
         'HOST': 'ec2-54-83-21-198.compute-1.amazonaws.com',
         'PORT': '5432'
     }
@@ -143,3 +143,10 @@ django_heroku.settings(locals())
 #Media
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#Mensagem
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    messages.SUCCESS: 'success',
+}
